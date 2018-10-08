@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
 
   buscarProducto( termino: string) {
 
-    if ( termino.length < 2) {
+    if ( termino.length > 0 && termino.length < 2) {
       return;
     }
 

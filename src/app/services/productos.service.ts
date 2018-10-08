@@ -46,12 +46,16 @@ export class ProductosService {
 
       this.productosFiltrado = [];
       termino = termino.toLocaleLowerCase();
+      if ( termino.length !== 0) {
       this.productos.forEach( producto => {
           const tituloLower = producto.titulo.toLocaleLowerCase();
           if ( producto.categoria.indexOf( termino ) >= 0 || tituloLower.indexOf( termino ) >= 0 ) {
               this.productosFiltrado.push( producto );
           }
       });
+    } else {
+      this.productosFiltrado = this.productos;
+    }
 
   }
 
